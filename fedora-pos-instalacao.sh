@@ -20,14 +20,15 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 #-------------------INICIO COMANDOS ROOT----------------------------------------------#
 sudo -s <<EOF
-#----------------DNF------------------------------------------------------------------#
+
 dnf update -y
 
 # adicionando repositirios
 dnf install -y \
 https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
 https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm \
-
+https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+#----------------REMOÇÃO DE PROGRAMAS-------------------------------------------------#
 # removendo programas que não utilizo
 dnf remove -y \
 cheese \
@@ -38,8 +39,7 @@ gnome-tour \
 gnome-boxes \
 gnome-photos \
 gnome-contacts \
-gnome-connections \
-libreoffice*
+gnome-connections
 
 dnf autoremove -y
 
@@ -47,6 +47,7 @@ dnf autoremove -y
 
 #programas DNF
 dnf install -y \
+libreoffice-langpack-pt-BR.x86_64 \
 vlc \
 rclone \
 toolbox
@@ -60,8 +61,7 @@ systemctl enable libvirtd
 flatpak install -y \
 com.github.tchx84.Flatseal \
 com.obsproject.Studio \
-md.obsidian.Obsidian \
-org.libreoffice.LibreOffice \
+io.typora.Typora \
 org.qbittorrent.qBittorrent \
 org.remmina.Remmina \
 io.github.spacingbat3.webcord \
