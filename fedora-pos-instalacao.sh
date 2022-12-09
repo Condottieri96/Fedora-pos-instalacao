@@ -50,7 +50,8 @@ dnf install -y \
 libreoffice-langpack-pt-BR.x86_64 \
 vlc \
 rclone \
-toolbox
+toolbox \
+persepolis
 
 # KVM para virtualizações
 dnf install -y @virtualization && \
